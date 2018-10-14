@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render ExpensesSummary with empty message 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExpensesSummary
+    expensesCount={1}
+    expensesTotal={123}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "Viewing ",
+        1,
+        " ",
+        "expense",
+        " totalling ",
+        "$1.23",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      "Viewing ",
+      1,
+      " ",
+      "expense",
+      " totalling ",
+      "$1.23",
+    ],
+    "type": "h1",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "Viewing ",
+          1,
+          " ",
+          "expense",
+          " totalling ",
+          "$1.23",
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        "Viewing ",
+        1,
+        " ",
+        "expense",
+        " totalling ",
+        "$1.23",
+      ],
+      "type": "h1",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`should render expense Summary with expenses 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExpensesSummary
+    expensesCount={3}
+    expensesTotal={100}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "Viewing ",
+        3,
+        " ",
+        "expenses",
+        " totalling ",
+        "$1.00",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      "Viewing ",
+      3,
+      " ",
+      "expenses",
+      " totalling ",
+      "$1.00",
+    ],
+    "type": "h1",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "Viewing ",
+          3,
+          " ",
+          "expenses",
+          " totalling ",
+          "$1.00",
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        "Viewing ",
+        3,
+        " ",
+        "expenses",
+        " totalling ",
+        "$1.00",
+      ],
+      "type": "h1",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
