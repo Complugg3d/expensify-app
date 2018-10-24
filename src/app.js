@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './ruter/AppRouter';
 import configureStore from './store/configureStore';
-// import getVisibleExpenses from './selectors/expenses';
+import { startSetExpenses } from './actions/expenses';
 import './firebase/firebase';
 // import { setTextFilter } from './actions/filters';
 import 'normalize.css/normalize.css';
@@ -20,10 +20,11 @@ const store = configureStore();
 // console.log('state -> ', store.getState());
 // console.log('vsible expenses', getVisibleExpenses(store.getState().expenses, store.getState().filters));
 const jsx = (
-    <Provider store={store}>
-        <AppRouter/>
-    </Provider>
+		<Provider store={store}>
+				<AppRouter/>
+		</Provider>
 );
-
-ReactDOM.render(jsx, document.getElementById('app'));
-
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+store.dispatch(startSetExpenses()).then(() => {
+		ReactDOM.render(jsx, document.getElementById('app'));
+});
