@@ -1,6 +1,10 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { startAddExpense, addExpense, removeExpense, editExpense, setExpeses, startSetExpenses } from '../../actions/expenses';
+import { 
+    startAddExpense, 
+    addExpense, removeExpense, 
+    editExpense, setExpeses, 
+    startSetExpenses, startRemoveExpense } from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
 
@@ -24,6 +28,23 @@ test('Should set up remove exense action obj', () => {
     expect(action).toEqual({
         type: 'REMOVE_EXPENSE',
         id: '123abc'
+    });
+});
+
+test('should remove expense from db and store', (done) => {
+    const store = createMockStore({});
+    const id = expenses[1].id;
+    store.dispatch(startRemoveExpense({ id })).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'REMOVE_EXPENSE',
+            id
+        });
+
+        return database.ref(`expenses/${id}`).once('value');                                 
+    }).then((snapshot) => {
+        expect(snapshot.val()).toBeNull();
+        done();
     });
 });
 
@@ -71,7 +92,7 @@ test('should add expense to db and store', (done) => {
     });
 });
 
-test('should add expense with defaults to db and store', () => {
+test('should add expense with defaults to db and store', (done) => {
     const store = createMockStore({});
     const expenseData = { };
     store.dispatch(startAddExpense(expenseData)).then(() => {
