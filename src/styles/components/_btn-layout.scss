@@ -1,0 +1,21 @@
+.btn-layout {
+  color: white;
+  background: $light-blue;
+  border: none;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+}
+.btn-layout--link {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+}
+
+.btn-layout--secondary {
+  background: $gray-steel;
+}
